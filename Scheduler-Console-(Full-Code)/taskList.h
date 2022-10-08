@@ -11,8 +11,8 @@ class taskList : public unorderedLinkedList<Task>
 {
 public:
     //Function to add task to the task list.
-    void addTask(const Task &);
-    //Function to remove task to the task list.
+    void addTask(const Task&);
+    //Function to remove task on the task list.
     void removeTask(int);
     //Function to clear tasks on the task list.
     void clearTasks();
