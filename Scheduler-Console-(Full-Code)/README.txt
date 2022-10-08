@@ -97,3 +97,5 @@ Although this is the console version of the scheduler program, all of the planne
 features and more has been added so this is actually the complete core program itself.
 
 The only feature left to be implemented is the GUI.
+
+Reminder: The project files may not include the "save_files" folder for some reason so you might as well add it.
