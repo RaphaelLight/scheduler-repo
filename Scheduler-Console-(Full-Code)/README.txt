@@ -98,4 +98,4 @@ features and more has been added so this is actually the complete core program i
 
 The only feature left to be implemented is the GUI.
 
-REMINDER: The project files may not include the "save_files" folder for some reason so you might as well add it.
+REMINDER: The project files in this repository may not include the "save_files" folder for some reason so you might as well add it.
