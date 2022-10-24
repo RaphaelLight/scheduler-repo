@@ -32,6 +32,7 @@ int main()
     cout << "Press D to display tasks on the list." << endl;
     cout << "Press C to copy tasks to another list." << endl;
     cout << "Press T to move task to the top of the list." << endl;
+    cout << "Press B to move task to the bottom of the list." << endl;
     cout << "Press W to move task up." << endl;
     cout << "Press S to move task down." << endl;
     cout << "Press Z to clear tasks." << endl;
@@ -154,6 +155,33 @@ int main()
                         continue;
                     }
                     calendar.moveTaskToTop(month, day, n);
+                    break;
+                }
+                break;
+            case 'B':
+                while(true)
+                {
+                    cout << "Date (Month/Day): " << endl;
+                    cin >> month >> day;
+                    cout << endl;
+                    if(month <= 0 || month > 12 || day <= 0 || day > 31)
+                    {
+                        cin.clear();
+                        cin.ignore(1000, '\n');
+                        cout << "Invalid Dates. Try Again." << endl << endl;
+                        continue;
+                    }
+                    cout << "Position (num): ";
+                    cin >> n;
+                    cout << endl;
+                    if(!cin) //EXCEPTION HANDLER
+                    {
+                        cin.clear();
+                        cin.ignore(1000, '\n');
+                        cout << "Invalid Input. Try Again." << endl << endl;
+                        continue;
+                    }
+                    calendar.moveTaskToBottom(month, day, n);
                     break;
                 }
                 break;
