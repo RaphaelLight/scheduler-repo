@@ -25,6 +25,8 @@ public:
     void copyTasksOnDate(int,int,int,int);
     //Function to move a task on the task list to the top of the list.
     void moveTaskToTop(int,int,int);
+    //Function to move a task on the task list to the bottom of the list.
+    void moveTaskToBottom(int,int,int);
     //Function to move task up one step in the list.
     void moveTaskUp(int,int,int);
     //Function to move task down one step in the list.
@@ -83,6 +85,20 @@ void Calendar::moveTaskToTop(int month, int day, int n)
     else
     {
         calendar[month][day].moveTaskToFront(n);
+        saveChanges(month, day, calendar[month][day]);
+    }
+}
+void Calendar::moveTaskToBottom(int month, int day, int n)
+{
+    if(calendar[month][day].length() == 0)
+        cout << "Cannot move in an empty task list." << endl << endl;
+    else if(n <= 0 || n > calendar[month][day].length())
+    {
+        cout << "Input out of bounds." << endl;
+    }
+    else
+    {
+        calendar[month][day].moveTaskToBack(n);
         saveChanges(month, day, calendar[month][day]);
     }
 }
