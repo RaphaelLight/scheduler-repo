@@ -254,6 +254,14 @@ void linkedList<Type>::moveBackward(int n)
         {
             cout << "The task is at the bottom of the list." << endl;
         }
+        else if(temp == first)
+        {
+            first = temp->link;
+            temp->link = temp->link->link;
+            first->link = temp;
+            if(temp->link == nullptr)
+                last = temp;
+        }
         else
         {
             trailTemp->link = temp->link;
