@@ -29,6 +29,8 @@ public:
     //Postcondition: none
     void moveToFront(int);
     //Function to move a node to the front of the list.
+    void moveToBack(int);
+    //Function to move a node to the back of the list.
     void moveForward(int);
     //Function to move a node forward.
     void moveBackward(int);
@@ -161,6 +163,40 @@ void linkedList<Type>::moveToFront(int n)
             first = temp;
             if(last == temp)
                 last = trailTemp;
+        }
+    }
+    else
+        cout << "Cannot move task in an empty list." << endl;
+}
+template <class Type>
+void linkedList<Type>::moveToBack(int n)
+{
+    node<Type> *trailTemp, *temp;
+    if(!isEmptyList())
+    {
+        temp = first;
+        for(int i = 1; i < n; i++)
+        {
+            trailTemp = temp;
+            temp = temp->link;
+        }
+        if(last == temp)
+        {
+            cout << "The task is in the back of the list" << endl;
+        }
+        else if(temp == first)
+        {
+            first = temp->link;
+            last->link = temp;
+            temp->link = nullptr;
+            last = temp;
+        }
+        else
+        {
+            trailTemp->link = temp->link;
+            last->link = temp;
+            temp->link = nullptr;
+            last = temp;
         }
     }
     else
