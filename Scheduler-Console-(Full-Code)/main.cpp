@@ -37,6 +37,7 @@ int main()
     cout << "Press S to move task down." << endl;
     cout << "Press Z to clear tasks." << endl;
     cout << "Press X to close the program." << endl << endl;
+    cout << "Press M to display actions menu." << endl << endl;
 
     int day, month, otherDay, otherMonth, n; //Variables to hold user input.
     string cat; //Catches trailing characters on key input. I can't name it catch so I named it cat ฅ^•ﻌ•^ฅ.
@@ -255,6 +256,19 @@ int main()
                     calendar.clearTasksOnDate(month, day);
                     break;
                 }
+                break;
+            case 'M':
+                cout << "Press A to add task on the list." << endl;
+                cout << "Press R to remove task on the list." << endl;
+                cout << "Press D to display tasks on the list." << endl;
+                cout << "Press C to copy tasks to another list." << endl;
+                cout << "Press T to move task to the top of the list." << endl;
+                cout << "Press B to move task to the bottom of the list." << endl;
+                cout << "Press W to move task up." << endl;
+                cout << "Press S to move task down." << endl;
+                cout << "Press Z to clear tasks." << endl;
+                cout << "Press X to close the program." << endl << endl;
+                cout << "Press M to display actions menu." << endl;
                 break;
             case 'X':
                 return 1;
