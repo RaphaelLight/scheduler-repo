@@ -94,7 +94,7 @@ above the menu of operations/actions.
 
 
 Although this is the console version of the scheduler program, all of the planned
-features and more has been added so this is actually the complete core program itself.
+features and more have all been implemented so this is actually the complete core program itself.
 
 The only feature left to be implemented is the GUI.
 
