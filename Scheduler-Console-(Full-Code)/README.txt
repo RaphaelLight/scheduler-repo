@@ -70,7 +70,7 @@ Play Skyrim <--- task title
 Defeat Alduin and kill all thalmor scums. <--- task description
 
 11 30 3 30
-Some random task
+Random task
 Just some random task.
 
 And so on.
