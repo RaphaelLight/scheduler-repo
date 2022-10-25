@@ -170,6 +170,7 @@ void Calendar::saveTask(const Task& task)
 void Calendar::saveChanges(int month, int day, taskList list)
 {
     ofstream fout; //ofstream variable declaration
+    Task task; //Task variable declaration and initialization.
     int startHr, startMin, endHr, endMin; //Task info variables declaration.
     //Text(save) file name processing stage.
     string fileName;
@@ -184,7 +185,6 @@ void Calendar::saveChanges(int month, int day, taskList list)
     }
     if(found)
     {
-        Task task;
         fout << month << " " << day << endl << endl;
         while(!list.isEmptyList())
         {
@@ -197,8 +197,18 @@ void Calendar::saveChanges(int month, int day, taskList list)
             fout << task.getDesc() << endl << endl;
             list.deleteNode(1);
         }
-        fout.close();
     }
+    else
+    {
+        while(!list.isEmptyList())
+        {
+            task = list.front();
+            task.setTaskDate(month, day);
+            saveTask(task);
+            list.deleteNode(1);
+        }
+    }
+    fout.close();
 }
 void Calendar::loadSavedTasks()
 {
